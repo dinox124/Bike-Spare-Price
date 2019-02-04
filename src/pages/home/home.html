@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row class="tiles" *ngFor="let tilePair of tiles">
+		<ion-col *ngFor="let tile of tilePair">
+			<ion-card class="tile" (click)="navigateTo(tile)">
+				<ion-card-content>
+					<ion-item>
+						<h1>
+							<ion-icon [name]="tile.icon"></ion-icon>
+						</h1>
+						<h2>{{tile.title}}</h2>
+					</ion-item>
+				</ion-card-content>
+			</ion-card>
+		</ion-col>
+	</ion-row>
+</ion-content>
